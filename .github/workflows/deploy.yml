@@ -9,16 +9,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: yarn
-      - run: yarn install --frozen-lockfile
-
+          registry-url: https://registry.npmjs.org
+      # 安装依赖
+      - name: Install dependencies
+        run: npm ci
+      # 构建
       - name: Build
-        run: yarn docs:build
-
+        run: npm run docs:build
+      # 部署
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
