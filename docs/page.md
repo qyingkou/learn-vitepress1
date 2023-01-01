@@ -1,10 +1,5 @@
----
-layout: page
----
 
-# page layout
-
-## title1
+## title0
 
 11111
 

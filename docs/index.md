@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/what-is-vitepress
+      link: ./markdown.md
 features:
   - icon: ⚡️
     title: Vite, The DX that can't be beat
@@ -20,11 +20,3 @@ features:
     title: Simple and minimal, always
     details: Lorem ipsum...
 ---
-
-<!-- this is home page.
-
-- [getting-started](getting-started.md)
-- [./a/index.md](./a/index.md)
-- [./a/](./a/)
-- [./a/b/index.md](./a/b/index.md)
-- [./a/b/](./a/b/) -->

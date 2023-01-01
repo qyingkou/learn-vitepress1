@@ -13,46 +13,22 @@ export default defineConfig({
   description: 'site description111',
   // srcDir: './',
   cleanUrls: 'with-subfolders',
+  markdown: {
+    lineNumbers: true
+  },
   /** Build Hooks */
   // async transformHead(ctx) { },
   // async transformHtml(code, id, context) { },
   // async transformPageData(pageData) { },
   // async buildEnd(siteConfig) { },
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/images/logo.png',
     siteTitle: 'siteTitle',
-    nav: [
-      { text: 'Guide', link: '/guide' },
-      {
-        text: 'Dropdown Menu',
-        items: [
-          { text: 'Item A', link: '/item-1' },
-          { text: 'Item B', link: '/item-2' },
-          { text: 'Item C', link: '/item-3' }
-        ]
-      }
-    ],
-    sidebar: [
-      {
-        text: 'Guide',
-        items: [
-          { text: 'Introduction', link: '/introduction' },
-          { text: 'Getting Started', link: '/getting-started' },
-          {
-            text: 'balabala', items: [
-              { text: 'Item A', link: '/item-1' },
-              { text: 'Item B', link: '/item-2' },
-              { text: 'Item C', link: '/item-3' }
-            ]
-          },
-        ]
-      }
-    ],
     // outline: 2,
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-      { icon: 'twitter', link: '...' },
-    ],
+    editLink: {
+      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
     // carbonAds: {
     //   code: 'your-carbon-code',
     //   placement: 'your-carbon-placement'
@@ -65,10 +41,36 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Evan You'
     },
-    editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-      text: 'Edit this page on GitHub'
-    },
-    // lastUpdatedText: 'Updated Date'
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'twitter', link: '...' },
+    ],
+    nav: [
+      { text: 'nav1', link: '/guide' },
+      {
+        text: 'nav2',
+        items: [
+          { text: 'Item A', link: '/item-1' },
+          { text: 'Item B', link: '/item-2' },
+          { text: 'Item C', link: '/item-3' }
+        ]
+      }
+    ],
+    sidebar: [
+      {
+        text: 'Guide',
+        items: [
+          { text: 'Home', link: '/' },
+          { text: 'advance', link: './advance.md' },
+          {
+            text: 'balabala', items: [
+              { text: 'assets', link: './assets.md' },
+              { text: 'markdown', link: './markdown.md' },
+              { text: 'page', link: './page' }
+            ]
+          },
+        ]
+      }
+    ],
   }
 })
